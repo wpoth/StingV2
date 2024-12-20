@@ -1,0 +1,58 @@
+:root {
+    --primaryColor: #000000;
+    --secondaryColor: #FFFFFF;
+    --accentColor: #FF0000;
+    --altFont: Georgia, serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+}
+
+.fade-text {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    overflow: hidden;
+    margin: 50px auto;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px; /* Ensure vertical centering */
+    opacity: 0;
+    visibility: hidden; /* Initially hidden */
+    animation: fadeInOut 6s infinite;
+}
+
+.text:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.text:nth-child(2) {
+    animation-delay: 2s; /* Start the second text after 2 seconds */
+}
+
+.text:nth-child(3) {
+    animation-delay: 4s; /* Start the third text after 4 seconds */
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    40%, 70% {
+        opacity: 1;
+        visibility: visible; /* Fade in */
+    }
+    71%, 100% {
+        opacity: 1;
+        visibility: visible; /* Keep visible for a while */
+    }
+}
